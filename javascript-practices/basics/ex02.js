@@ -15,6 +15,7 @@
  */
 
 console.log("=== 기본타입(undefined, number, string, boolean) ======")
+console.log("=== 기본타입(undefined, number, string, boolean) ======")
 // myVariable;     // reference error
 var u = undefined; // var u; 동일, 자바스크립트는 정의와 선언을 구분 하지 않는다.
 var i = 10;
