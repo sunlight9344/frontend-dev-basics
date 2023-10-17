@@ -46,6 +46,25 @@ p.word_space {
 	word-spacing:0px;
 }
 
+p.text3 {
+	height: 20px;
+	border: 1px solid #333;	
+	cursor: pointer;
+	
+	width: 100px;          		 /* 일단 터지게 해                               */
+	white-space: nowrap;  		/* 줄바꿈 금지요                                */
+	overflow-x: hidden;  	   /* 글자 길이가 너비를 초과했을 경우 숨김               */
+	text-overflow: ellipsis;  /* 글자 길이가 너비를 넘어가는 경우 ... 으로 대체 해버림  */
+}
+
+p.text3:hover + div {
+	display: block;
+}
+
+p.text3 + div {
+	display: none;
+}
+
 </style>
 </head>
 
@@ -66,6 +85,9 @@ p.word_space {
 <p class="word_space"> 단어와 단어 사이의 간격을 조절합니다.</p>
 
 <p class="text3">영문자는 abc 로 시작됩니다.</p>
+<div>
+	영문자는 abc 로 시작됩니다.
+</div>
 
 </body>
 </html>
