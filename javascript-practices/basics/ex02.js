@@ -52,3 +52,9 @@ console.log("=== 원시 타입도 메소드를 호출 할 수 있다.(유사객�
 console.log(b2.valueOf());
 console.log(b.valueOf());   // console.log(new Boolen(b).valueOf())
 
+var o = new Object();
+var a = new Array();
+var re = new RegExp();
+var d = new Date();
+var o2 = {};
+var a2 = [];
