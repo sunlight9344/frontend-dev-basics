@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.onload = function() {
+	setTimeout(function() {
+		var imgElement = document.createElement("img");
+		imgElement.setAttribute('src', 'https://i.namu.wiki/i/z34nxWYAl7ne1FRi89xYePK73QeXn5WAmDkDKjONebF51mEanrk8y2t2yzbVHF-pOoiUTLIhjaXJ_hxuPCegEwDSCY5RJjsvIMIyyGGkCkc5JtTZxBeNWdhq0TzZvK0UObFT_wGX6oUzSSC4C5DvLw.webp');
+		imgElement.setAttribute('style','width: 300px');
+		imgElement.setAttribute('alt', 'MEGA HOT SAM');
+		imgElement.setAttribute('title', '메 가 핫 삼');
+		imgElement.setAttribute('no', 10);
+		
+		//imgElement.no = 10;
+		// -> 표준 속성은 이름으로 접근할 수 있지만 비표준 속성은 이름으로 접근 할 수 없음
+		
+		// 비표준 속성은 이름으로 접근 할 수 없다.
+		console.log(imgElement.no, imgElement.getAttribute("no"), imgElement.alt);
+		
+		document.body.appendChild(imgElement);
+	}, 999);
+}
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

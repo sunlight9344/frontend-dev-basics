@@ -3,6 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script>
+window.onload = function() {
+	
+	//1. ID
+	var header01 = document.getElementById("header-01");
+	var header02 = document.getElementById("header-02");
+	
+	//2. Tag Name
+	var h4s = document.getElementsByTagName("h4");
+	
+	//3. Class Name
+	var h5s = document.getElementsByClassName("header");
+	
+	//4. query selector api 	
+	var header07 = document.querySelector("#header-07");
+	var h6s = document.querySelectorAll(".header2");
+	
+	setTimeout(function() {
+		header01.innerText += "-뽀찌뽀찌1";
+		header02.innerText += "-뽀찌뽀찌2";
+		
+		h4s[0].innerText += "-초키초키1";
+		h4s[1].innerText += "-초키초키2";
+		
+		h5s[0].innerText += "-또잉도잉1";
+		h5s[1].innerText += "-도잉또잉2";
+		
+		h6s[0].innerText += "-모누두노1";
+		h6s[1].innerText += "-모노두노2";
+		
+		header07.innerText += "-유소스페";
+		
+	}, 999);
+}
+</script>
+	
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

@@ -3,10 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script>
+	console.log(location.href);
+	
+	setTimeout(function() {
+		// 2초 후에 페이지 이동
+		// location.href = "http://www.naver.com";
+		
+	}, 1000);
+</script>
+
 </head>
 <body>
 	<h1>BOM(Browser Object Model)</h1>
 	<h2>3. localtion 객체</h2>
 	<h3>Refresh Page 하는 방법</h3>
+	
+	<!-- 이따구스로 하면 f5 누르는 거랑 똑같음, 캐싱 된거에서 가져올 가능성이 있음 == 서버에서 다시 가져오지 않을 가능성 있음 -->
+	<button onclick="location = location;">refresh01</button>
+	<button onclick="location.href = location.href;">refresh02</button>
+	<button onclick="location.assign('');">refresh03</button>
+	<button onclick="location.replace(location);">refresh04</button>
+	
+	<!-- 이거다 ctrl+f5 ***추천*** -->
+	<button onclick="location.reload();">refresh05</button>
+	
+	<!-- redirect 하기스 -->
+	<button onclick='location.href = "https://www.poscodx.com";'>TOTHEPOSCODX</button>
+	
+	
+	
 </body>
 </html>
