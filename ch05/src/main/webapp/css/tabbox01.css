@@ -5,7 +5,7 @@ ul, ol, dl { list-style-type: none; }
 body       { font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
 
 .tab-box {
-	width: 514.3px;
+	width: 518.2;
 	margin: 100px auto;
 	height: 44px;
 	line-height: 22px;
@@ -28,7 +28,7 @@ body       { font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
 }
 
 .tab-box div {
-	width: 514.3px;
+	width: 516.6px;
 	height: 200px;
 	border: 1px solid #333;
 	margin-top: -1px;
