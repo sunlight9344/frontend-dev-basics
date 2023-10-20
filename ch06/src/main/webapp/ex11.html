@@ -20,6 +20,24 @@
 	1) callback functino(펑티노)
 	2) DOM Event Model Level2
 	
+4. DOM EVENT MODEL
+	1) DOM HTML ELEMENT의 EVENT HANDLER를 설정하는 방법에 대한 표준
+	2) DOM EVENT MODEL Lv.0
+		1. basic
+			- 고전적인 이벤트 처리 방식
+			- element.onclick = function() { ... }
+			- 문제점은 이벤트 핸들러를 하나만 등록 시킬 수 있다.
+			
+		2. inline
+			- 태그 안에 event attribute(이벤트 속성)에 자바스크립트 코드를 설정
+			- <h1 onclick="js codes ...">
+			- 웹표준 위배(we bae ~)
+			
+	3) DOM EVENT MODEL Lv.2
+		1. Apply Observer Pattern Listener(함수, Event Handler)를 등록하는 방식
+		2. 여러 이벤트 핸들러를 등록 할 수 있 다 ! ! !
+		3. HTMLElement에 객체가 이벤트 핸들러를 등록 할 수 있는 함수(DOM API)를 제공해야 한다.
+	
 [DOM EVENT(도미벤트) 종류]
 1. 마우스
 	- mouseover, mouseout
@@ -32,8 +50,31 @@
 	- submit
 	
 4. input(focus, blur, changing of input value)
+
 5. touch(cause by mobile phone, using finger)
 */
+window.onload = function() {
+	console.log("load -1-");
+}
+
+// 이 방식으로는 리스너를 여러개 등록 할 수 있음
+window.addEventListener("load", function() {
+	console.log("load -2-");
+});
+
+window.addEventListener("load", function() {
+	document
+		.querySelector("#header-2")
+		.onclick = function() {
+			console.log("clicked !!! - Basic");
+		}
+		
+	document
+		.querySelector("#header-3")
+		.addEventListener("click", function() {
+			console.log("clicked !!! - 2");
+		});
+});
 
 </script>
 </head>
