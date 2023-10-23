@@ -10,10 +10,22 @@ window.addEventListener('load', function() {
 	document
 		.getElementById('form-login')
 		.onsubmit = function() {
-			return false;
-			// or return true;
+			
+			var inputEmail = document.getElementById('input-email');
+			if(inputEmail.value === '') {
+				alert('이메일이 비어 있습니다.');
+				inputEmail.focus();
+				return false;
+			}
+			
+			var inputPassword = document.getElementById('input-password');
+			if(inputPassword.value === '') {
+				alert('패스워드가 비어 있습니다.');
+				inputPassword.focus();
+				return false;
+			}
+			return true;
 		}
-	
 });
 
 </script>
