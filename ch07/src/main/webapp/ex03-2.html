@@ -4,20 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="jquery/jquery-simple.js"></script>
 <script>
+console.log(jQuery().jquery);
 $(function(){
+	
 	var $obj = $(".par");
+	console.log(
+		$obj,
+		typeof(jQuery),
+		typeof ($obj),
+		$obj.length,
+		$obj instanceof Array
+	);
+	
 	$obj.click(function(){
 		console.log("clicked:" + this);
 	});
-
+	
 	setTimeout(function(){
 		$obj.css('color', 'red');
-	}, 2000);
+	}, 1000);
 
 	setTimeout(function(){
 		$("p").css('font-weight', 'bold');
-	}, 4000);
-
+	}, 2000);
+	
 });
 </script>
 </head>

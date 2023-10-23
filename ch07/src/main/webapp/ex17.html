@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.7.1.js"></script>
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#p1").text('안녕');
+		$("#p2").text('<strong>스트롱맨</strong>');
+		console.log($('#p3').text());
+		console.log($('#p4').text());
 	}, 1000);
 });
 </script>
