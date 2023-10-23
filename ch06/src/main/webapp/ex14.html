@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script>
+
+window.addEventListener('load', function() {
+	document
+		.getElementById('form-login')
+		.onsubmit = function() {
+			return false;
+			// or return true;
+		}
+	
+});
+
+</script>
+
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
