@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>sample1</title>
+<script type="text/javascript" src="./jquery/jquery-3.7.1.js"></script>
+<link href='image-viewer.css' type='text/css' rel="stylesheet"/>
+<script type="text/javascript">
+	
+var isClicked;
+var interval;
+
+var images = [
+	"국화:Chrysanthemum.jpg", 
+	"사막:Desert.jpg", 
+	"수국:Hydrangeas.jpg", 
+	"해파리:Jellyfish.jpg", 
+	"코알라:Koala.jpg", 
+	"등대:Lighthouse.jpg", 
+	"펭귄:Penguins.jpg", 
+	"툴립:Tulips.jpg" ];
+	
+var changeImage = function() {
+	var index = Math.floor(Math.random() * images.length);
+	var info = images[index].split(":");
+	$('img').attr({
+		"src": "/ch07/images/" + info[1],
+		"alt": info[0],
+		"title": info[1]
+	})
+};
+
+var slide = function() {
+	interval = setInterval(function() {
+	var index = Math.floor(Math.random() * images.length);
+	var info = images[index].split(":");
+	$('img').attr({
+		"src": "/ch07/images/" + info[1],
+		"alt": info[0],
+		"title": info[1]
+		})
+	}, 1000);
+}
+	
+var slideImage = function() {
+	console.log(this);
+	isClicked = !isClicked;
+	
+	$('#btn-slideshow')
+		.text(isClicked ? '슬라이드쇼 중지' : '슬라이드쇼 시작');
+		
+	isClicked ? slide() : clearInterval(interval);
+}
+	
+$(function(){
+	isClicked = false;
+	changeImage();
+	$("#btn-change").click(changeImage);
+	$("#btn-slideshow").click(slideImage);
+});
+
+</script>
+</head>
+<body>
+	<div class="image-viewer">
+		<div class="buttons">
+			<button id="btn-change">이미지변경</button>
+			<button id="btn-slideshow">슬라이드쇼 시작</button>
+		</div>
+		<div>
+			<img />
+		</div>
+	</div>
+</body>
+</html>

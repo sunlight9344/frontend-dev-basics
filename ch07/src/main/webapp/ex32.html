@@ -6,7 +6,28 @@
 <script type="text/javascript">
 $(function() {
 	setTimeout(function(){
-	}, 2000);
+		/*
+		$('h2 a').attr("href", "https://www.poscodx.com");
+		$('h2 a').attr("target", "_blank");
+		$('h2 a').attr("title", "배구배구");
+		$('h2 a').attr("font-size", "0.75em");
+		*/
+		
+		$('h2 a')
+			.attr("href", "https://www.poscodx.com")
+			.attr("target", "_blank")
+			.attr("title", "배구배구")
+			.css("font-size", "0.75em");	
+		
+		$('h2 a')
+			.attr({
+				"href": "https://www.poscodx.com",
+				"target": "_blank",
+			    "title": "배구배구"
+			})
+			.css("font-size", "0.75em");
+			
+	}, 1000);
 });  
 </script>
 </head>

@@ -1,0 +1,1 @@
+_jQuery.prototype.jquery = 'ex34.beta';
