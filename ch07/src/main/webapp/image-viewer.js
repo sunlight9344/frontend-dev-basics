@@ -47,7 +47,7 @@ var imageViewer = {
 			}, 1000);
 		}
 		isClicked = false;
-		imageViewer.changeImage;
+		changeImage();
 		$("#btn-change").click(changeImage);
 		$("#btn-slideshow").click(slideImage);
 	}
