@@ -7,11 +7,34 @@
 <!-- <script src='/ch07/jquery/jquery-3.7.1.js'></script> -->
 
 <!-- 압축버젼(애플리케이션 서버 호스팅) -->
-<script src='/ch07/jquery/jquery-3.7.1.min.js'></script>
+<!-- <script src='/ch07/jquery/jquery-3.7.1.min.js'></script> -->
+
+<!-- 소스버젼(CDN 호스팅) -->
+<!-- <script src='https://code.jquery.com/jquery-3.7.1.js'></script> -->
+
+<!-- 압축버젼(CDN 호스팅) -->
+<script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
 
 <script>
 // 버전 확인
-console.log(jQuery().jquery);
+console.log(jQuery().jquery, $().jquery);
+
+window.addEventListener('load', function() {
+	
+	setTimeout(function() {
+		// jquery object
+		var $obj = jQuery('h1');
+		console.log(
+			$obj, 
+			typeof($obj), 
+			$obj.length,
+			$obj instanceof Array
+		);
+	
+		$obj.css('color','red');
+	}, 1000);
+
+});
 </script>
 
 </head>
