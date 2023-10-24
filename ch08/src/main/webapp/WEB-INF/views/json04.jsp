@@ -10,23 +10,24 @@
 <script src="${pageContext.request.contextPath }/jquery/jquery-3.7.1.js"></script>
 <script>
 $(function() {
+	
 	var vo = {
 		name: '뚜삐',
 		password: '1234',
 		contents: '빵빵!!!'
-		
 	};
+	
 	$('button').click(function() {
-		console.log($.param(vo));
+		console.log(JSON.stringify(vo));
 		$.ajax({
 			url: '${pageContext.request.contextPath }/api/post01',
 			async: true,
 			type: 'post',
 			dataType: 'json',
-			contentType: 'application/x-www-form-urlencoded',
-			data: $.param(vo),
+			contentType: 'application/json',
+			data: JSON.stringify(vo),
+			
 			success: function(response) {
-				console.log()
 				if(response.result !== "success") {
 					console.error(response.message);
 					return;
@@ -49,7 +50,7 @@ $(function() {
 </script>
 </head>
 <body>
-	<h1>this is json3 page</h1>
+	<h1>this is json4 page</h1>
 	<button>데이터 본애기</button>
 	<div id='data'></div>
 </body>

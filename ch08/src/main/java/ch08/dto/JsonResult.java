@@ -1,12 +1,13 @@
 package ch08.dto;
 
 import ch08.vo.GuestbookVo;
+import ch08.vo.UserVo;
 
 public class JsonResult {
 	private String result;  //"success" or "fail"
 	private Object data;    // if success, set!
 	private String message; // if fail, set!
-
+	
 	private JsonResult(Object data) {
 		this.result = "success";
 		this.data = data;
@@ -18,6 +19,10 @@ public class JsonResult {
 	}
 	
 	public static JsonResult success(GuestbookVo vo) {
+		return new JsonResult(vo);
+	}
+	
+	public static JsonResult success(UserVo vo) {
 		return new JsonResult(vo);
 	}
 	
