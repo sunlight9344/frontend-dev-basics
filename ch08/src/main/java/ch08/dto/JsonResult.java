@@ -18,12 +18,8 @@ public class JsonResult {
 		this.message = message;
 	}
 	
-	public static JsonResult success(GuestbookVo vo) {
-		return new JsonResult(vo);
-	}
-	
-	public static JsonResult success(UserVo vo) {
-		return new JsonResult(vo);
+	public static JsonResult success(Object data) {
+		return new JsonResult(data);
 	}
 	
 	public static JsonResult fail(String message) {

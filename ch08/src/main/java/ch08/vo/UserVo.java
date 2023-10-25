@@ -1,7 +1,7 @@
 package ch08.vo;
 
 public class UserVo {
-	private int no;
+	private Long no;
 	private String name;
 	private String email;
 	private String password;
@@ -25,10 +25,10 @@ public class UserVo {
 				+ gender + ", joinDate=" + joinDate + ", role=" + role + "]";
 	}
 	
-	public int getNo() {
+	public Long getNo() {
 		return no;
 	}
-	public void setNo(int no) {
+	public void setNo(Long no) {
 		this.no = no;
 	}
 	public String getName() {
