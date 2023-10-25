@@ -20,6 +20,7 @@
 		// where 에서 걸러서 paging 하지 말고 저렇게 해라
 		// 맨 마지막꺼보다 작은애들중에 몇개 해서 뒤집어서 렌더링?
 				//sno 보다 작은 no 의 역순 row 를 top-k(limit 0, k)
+
 var render = function(vo, mode) {
 	var html =
 		"<li data-no='"+ vo.no + "'>" +
@@ -49,14 +50,58 @@ var fetch = function() {
 }
 
 $(function() {
-	$(window).scroll(function() {
-		if(flag) {
-			return;
+	var dialogDelete = $("#dialog-delete-form").dialog({
+		autoOpen: false,
+		model: true,
+		buttons: {
+			"삭제": function() {
+				// var no, var password 를 빼오는게 문제임
+				
+				var no =$('#hidden-no').val();
+				var password = $('#password-delete').val();
+				console.log("ajax 삭제하는 걸 여기서 ...");
+				
+				console.log(no, password);
+				
+				// 후처리
+				//1. response.data 가지고 있는 <li data+no='{no}' > 찾아서 삭제
+				//2. dialogDelete.dialog('close');
+				
+				//3. 폼의 input reset 해주기
+				//dialog 개구린데 그냥 밖에 password 입력창 놔두고 하고싶음
+				
+			},
+			"취소": function() {
+				$(this).dialog('close');
+			}
+		},
+		close: function() {
+			console.log("야 다이알로그 꺼졌다 이제 정리 ㄱㄱ");
+			$('#password-delete').val('');
 		}
-		
-		flag = true;
-		// 조건(스크롤바가 바닥에 도착 하면) fetch() 를 call 호출한다
+	});
+	
+	
+	// 댓글 삭제 버튼 click 이벤트 처리 dom 이 있는 상태에서 찾아서 해야하는데
+	// fetch() 통신이라서 생기기 전에 즉 dom 이 다 생성되기 전에 해버릴 가능성이 큼
+	// -> Live Event 해야 함 -> document 한테 click 이벤트 위임해 보리기
+	/*
+	$("#list-guestbook li a").click(function(event) {
+		event.preventDefault();
+		console.log("clicked");
 	})
+	*/
+	
+	$(document).on('click', '#list-guestbook li a',function() {
+		event.preventDefault();
+		
+		$('#hidden-no').val($(this).data('no'));
+		
+		console.log($(this).data('no'));
+		dialogDelete.dialog('open');
+		// ajax 로 조져 !!!!!
+		// 근데 어떻게 해 
+	});
 	
 	fetch();
 });

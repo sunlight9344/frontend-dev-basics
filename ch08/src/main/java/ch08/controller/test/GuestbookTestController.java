@@ -13,9 +13,15 @@ public class GuestbookTestController {
 		return "gb/ex01";
 	}
 	
-	//add
+	//list
 	@RequestMapping("/ex02")
 	public String ex02() {
 		return "gb/ex02";
+	}
+	
+	//delete
+	@RequestMapping("/ex03")
+	public String ex03() {
+		return "gb/ex03";
 	}
 }

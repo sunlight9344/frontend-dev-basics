@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 
-var render = function(vo) {
+var render = function(vo, mode) {
 	var html =
 		"<li data-no='"+ vo.no + "'>" +
 		"<strong>" + vo.name + "</strong>" +
@@ -21,7 +21,7 @@ var render = function(vo) {
 		"<a href='#' data-no='"+ vo.no + "'>삭제</a>" +
 		"</li>"
 	
-	$("#list-guestbook").prepend(html);
+	$("#list-guestbook")[mode ? 'prepend' :'append'](html);
 	
 };
 
@@ -45,7 +45,7 @@ $(function() {
 					console.error(response.message);
 					return;
 				}
-				render(response.data);
+				render(response.data, true);
 			}
 		})
 	});
