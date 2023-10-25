@@ -67,7 +67,7 @@ $(function() {
 			url: '${pageContext.request.contextPath }/api/user/10',
 			type: 'delete',
 			dataType: 'json',
-			contentType: 'application/x-www-form-url-urlencoded',
+			contentType: 'application/x-www-form-urlencoded',
 			data: "password=12345",
 			success: function(response) {
 				console.log(response);
