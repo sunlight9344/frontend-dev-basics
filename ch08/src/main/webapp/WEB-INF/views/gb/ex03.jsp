@@ -68,7 +68,6 @@ $(function() {
 				//2. dialogDelete.dialog('close');
 				
 				//3. 폼의 input reset 해주기
-				//dialog 개구린데 그냥 밖에 password 입력창 놔두고 하고싶음
 				
 			},
 			"취소": function() {
