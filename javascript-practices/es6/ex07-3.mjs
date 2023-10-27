@@ -16,3 +16,14 @@ export const add = function(a, b) {
 export const subtract = function(a, b) {
     return a - b;
 }
+
+// (참고) 참고하라고 ㅋㅋ 동일함 둘 중에 선택하기 근데 위에거를 더 쓸 것 같긴 함
+// const add = function(a, b) {
+//     return a + b;
+// };
+
+// const subtract = function(a, b) {
+//     return a - b;
+// };
+
+// export {add, subtract};
