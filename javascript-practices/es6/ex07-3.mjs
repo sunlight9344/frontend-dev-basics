@@ -7,7 +7,7 @@
  * 
  * 2. destricting이 가능하다.
  * 
- */
+ */ 
 
 export const add = function(a, b) {
     return a + b;
