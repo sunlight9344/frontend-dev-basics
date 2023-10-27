@@ -49,3 +49,13 @@ console.log("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ�
 
 // ex05 binding 또로또롱
 console.log("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+
+const dooly = {
+    name: '둘리',
+    friends: ['도치', '마이콜', '도우너'],
+    printFriends: function() {
+        this.friends.forEach((friend) => console.log(`${this.name}의 친구 ${friend}`))
+    }
+};
+
+dooly.printFriends();
